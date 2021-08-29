@@ -1,0 +1,32 @@
+:root {
+	--bg-1: hsla(0, 0%, 40%, 30%);
+	--bg-2: hsla(0, 0%, 50%, 60%);
+	--bg-3: hsla(220, 50%, 60%, 100%);
+	--bg-3-faded: hsla(220, 10%, 50%, 100%);
+	--fg-1: hsla(0, 0%, 0%, 100%);
+	--fg-2: hsla(0, 0%, 0%, 100%);
+	--fg-3: hsla(220, 40%, 100%, 100%);
+	--border-radius: 0.5rem;
+	--color-info: hsl(60, 80%, 60%);
+}
+
+/* Generic styling */
+* {
+	box-sizing: border-box;
+}
+body {
+	user-select: none;
+	overflow: hidden;
+	margin: 0px;
+	font-family: monospace, Courier, "Courier New";
+}
+/* Forms */
+input,
+button {
+	font-family: monospace, Courier, "Courier New";
+	border: none;
+	outline: none;
+}
+button {
+	cursor: pointer;
+}

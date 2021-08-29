@@ -1,0 +1,25 @@
+{
+	"name": "hand-visualiser-client",
+	"version": "0.0.0",
+	"description": "",
+	"scripts": {
+		"start": "vite",
+		"dev": "vite",
+		"build": "vite build && ncp ./dist ../dist && ncp ./models ../dist/models",
+		"serve": "vite preview"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"solid-app-router": "^0.1.5",
+		"solid-js": "^1.0.7",
+		"three": "^0.132.2"
+	},
+	"devDependencies": {
+		"@types/three": "^0.131.0",
+		"ncp": "^2.0.0",
+		"node-sass": "^6.0.1",
+		"sass": "^1.38.1",
+		"vite": "^2.4.4",
+		"vite-plugin-solid": "^2.0.1"
+	}
+}
