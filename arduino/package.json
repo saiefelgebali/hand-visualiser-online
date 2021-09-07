@@ -1,0 +1,13 @@
+{
+	"name": "arduino",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "saiefelgebali",
+	"license": "MIT",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"serialport": "^9.2.1"
+	}
+}
