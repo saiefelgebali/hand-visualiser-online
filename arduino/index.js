@@ -10,11 +10,18 @@ const portName = "ttyACM0";
 const port = new SerialPort(`/dev/${portName}`, { baudRate: 9600 });
 const parser = port.pipe(new Readline({ delimiter: "\n" }));
 
+const socket = new WebSocket("ws://localhost:5000");
+
+socket.on("open", (e) => {
+	socket.send("hello world!");
+});
+
 // read the port data
 port.on("open", () => {
 	console.log("Serial port open");
 });
 
 parser.on("data", (data) => {
-	console.log("received data from arduino:", data);
+	const [finger, value] = data.split(">>");
+	console.log(finger, value);
 });

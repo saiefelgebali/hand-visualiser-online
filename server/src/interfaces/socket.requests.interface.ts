@@ -69,5 +69,5 @@ export interface ClientChatMessage {
 
 export interface ClientHandPosition {
 	type: "handPosition";
-	hand: HandPosition;
+	hand: Partial<HandPosition>;
 }
