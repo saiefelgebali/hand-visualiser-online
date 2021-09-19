@@ -15,10 +15,10 @@ const RoomClient: Component = () => {
 	// handle loading and errors
 	const [uiMessage, setUiMessage] = createSignal("Joining lobby...");
 
-	// extract roomId from urlParams
-	const params = useParams();
-	const roomId = params.roomId.toUpperCase();
-	setRoomId(roomId);
+	// // extract roomId from urlParams
+	// const params = useParams();
+	// const roomId = params.roomId.toUpperCase();
+	// setRoomId(roomId);
 
 	// navigation
 	const navigate = useNavigate();

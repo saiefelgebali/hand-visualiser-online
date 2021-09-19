@@ -3,6 +3,7 @@ import path from "path";
 import http from "http";
 import { WebSocketServer } from "./sockets/sockets";
 import { debug } from "debug";
+import { arduinoServer } from "./arduino";
 
 const debugLog = debug("app:server");
 
@@ -17,7 +18,8 @@ class App {
 		this.port = port;
 		const app = express();
 		this.server = new http.Server(app);
-		this.socketServer = new WebSocketServer(this.server);
+		// this.socketServer = new WebSocketServer(this.server);
+		arduinoServer(this.server);
 
 		// use client
 		app.use(express.static(path.join(__dirname, "..", "..", "dist")));
@@ -35,7 +37,7 @@ class App {
 
 	public start() {
 		// start accepting socket connections
-		this.socketServer.start();
+		// this.socketServer.start();
 
 		this.server.listen(this.port, () => {
 			debugLog("server listening...");

@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const http_1 = __importDefault(require("http"));
-const sockets_1 = require("./sockets/sockets");
 const debug_1 = require("debug");
+const arduino_1 = require("./arduino");
 const debugLog = debug_1.debug("app:server");
 const port = parseInt(process.env.PORT) || 3000;
 class App {
@@ -15,7 +15,8 @@ class App {
         this.port = port;
         const app = express_1.default();
         this.server = new http_1.default.Server(app);
-        this.socketServer = new sockets_1.WebSocketServer(this.server);
+        // this.socketServer = new WebSocketServer(this.server);
+        arduino_1.arduinoServer(this.server);
         // use client
         app.use(express_1.default.static(path_1.default.join(__dirname, "..", "..", "dist")));
         // route all requests to client
@@ -27,7 +28,7 @@ class App {
     }
     start() {
         // start accepting socket connections
-        this.socketServer.start();
+        // this.socketServer.start();
         this.server.listen(this.port, () => {
             debugLog("server listening...");
             console.log(`Server running on port ${this.port}`);

@@ -52,7 +52,7 @@ export class SocketController {
 			roomId: roomId(),
 			username: username(),
 		};
-		this.socket.emit(connectData);
+		// this.socket.emit(connectData);
 	};
 	onSocketClose = () => {
 		// close socket

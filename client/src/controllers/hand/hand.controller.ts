@@ -69,6 +69,8 @@ export class HandController extends CommonObjectController {
 		const finger = this.hand[fingerName];
 		const percentAmount = -amount / 100;
 
+		if (!finger || !finger[0]) return;
+
 		if (fingerName == "thumb") {
 			finger[2].rotation.z = percentAmount * (Math.PI * 0.4);
 			return;
