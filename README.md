@@ -2,9 +2,7 @@
 
 A friend of mine created a glove-like device that outputs data of how the fingers are positioned.
 
-I created this application to visualize the output data on a 3D hand model.
-
-Since I didn't have access to the physical glove device during development, I built this app on the basis that users will join a room and control a hand using UI sliders in real-time.
+I created this demo application to visualize the output data on a 3D hand model.
 
 ## Project Demo
 
